@@ -1,0 +1,17 @@
+Reset and Count
+
+this keeps a number from going too low
+
+purpose: Stop an important number from becoming invalid.
+
+How it works
+The program looks at a number called n. If that number is zero or lower, it forces it back to zero.
+
+code:
+if (n <= 0) { n = 0; }
+i = i + 1;
+
+status: Unfinished core logic – ready for review.
+
+## Not a real section
+random leftover thought that is not a section

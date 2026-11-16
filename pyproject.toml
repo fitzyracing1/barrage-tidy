@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "barrage-tidy"
+version = "0.1.0"
+description = "Turn rough notes into a valid Barrage document (plain-language markup). Rules and code, no AI, offline."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Joshua Almeida" }]
+requires-python = ">=3.10"
+keywords = ["barrage", "plain-language", "cli", "offline", "no-ai", "markup"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.urls]
+Homepage = "https://github.com/sponsors/fitzyracing1"
+Repository = "https://github.com/fitzyracing1/barrage-tidy"
+"Barrage language" = "https://github.com/fitzyracing1/barrage"
+"Barrage checker" = "https://github.com/fitzyracing1/barrage-checker"
+
+[project.scripts]
+barrage-tidy = "barrage_tidy.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
