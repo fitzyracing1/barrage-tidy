@@ -96,7 +96,7 @@ PLACEHOLDERS = {
 }
 
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.*)$")
-LABEL_RE = re.compile(r"^([A-Za-z][A-Za-z 0-9()'/-]{0,60})\s*:\s+(.*)$")
+LABEL_RE = re.compile(r"^([A-Za-z][A-Za-z 0-9()'/-]{0,60})\s*:\s*(.*)$")
 
 
 @dataclass

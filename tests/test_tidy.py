@@ -37,6 +37,16 @@ def test_rough_notes_become_valid_document():
     assert "## The actual code" in text
     assert "```" in text
     assert "if (n <= 0)" in text
+    # The code must be in The actual code, not left under How it works,
+    # and not replaced by the empty-fence placeholder.
+    code_at = text.index("## The actual code")
+    how_at = text.index("## How it works (plain English)")
+    keys_at = text.index("## Key ideas")
+    actual = text[code_at:text.index("## Line-by-line translation")]
+    how = text[how_at:keys_at]
+    assert "if (n <= 0)" in actual
+    assert "if (n <= 0)" not in how
+    assert "// (no code was found in the notes)" not in actual
     assert "## Current status" in text
     assert "Unfinished core logic" in text
     # Leftover prose that could not be mapped is an HTML comment.
